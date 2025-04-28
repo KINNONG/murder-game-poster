@@ -55,6 +55,39 @@ npm run dev
 4. 实时预览海报效果
 5. 点击"导出海报"按钮保存图片
 
+## 部署到 GitHub Pages
+
+本项目已配置好自动部署到 GitHub Pages 的工作流程。按照以下步骤操作：
+
+1. 创建 GitHub 仓库:
+
+   - 访问 [GitHub](https://github.com/) 并登录
+   - 点击 "New" 创建新仓库
+   - 填写仓库名称（例如 "murder-game-poster"）
+   - 勾选 "Public" 选项
+   - 点击 "Create repository" 按钮
+
+2. 使用部署脚本:
+
+   ```bash
+   ./scripts/deploy-github.sh
+   ```
+
+   - 按提示输入您的 GitHub 用户名和仓库名称
+   - 脚本会自动配置和推送代码到 GitHub
+
+3. 配置 GitHub Pages:
+
+   - 在您的仓库页面，点击 "Settings"
+   - 在左侧导航中找到 "Pages"
+   - 在 "Source" 部分，选择 "GitHub Actions"
+   - 等待自动部署完成
+
+4. 访问您的网站:
+   ```
+   https://[您的GitHub用户名].github.io/[仓库名称]/
+   ```
+
 ## 技术栈
 
 - Next.js 15.x - React 框架
