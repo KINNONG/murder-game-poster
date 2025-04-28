@@ -1,5 +1,6 @@
 "use client";
 
+import { getAssetPath } from "@/lib/utils";
 import { type PosterData } from "@/types/poster";
 
 interface PosterPreviewProps {
@@ -35,13 +36,17 @@ function DetectivePoster({ posterData }: PosterPreviewProps) {
     <div id="poster-preview" className="relative w-full aspect-[3/4] overflow-hidden detective-font">
       {/* 使用固定的背景图片 */}
       <div className="absolute inset-0">
-        <img src="/images/templates/example.jpg" alt="背景模板" className="w-full h-full object-cover" />
+        <img
+          src={getAssetPath("/images/templates/example.jpg")}
+          alt="背景模板"
+          className="w-full h-full object-cover"
+        />
         {/* 添加一个半透明遮罩层以便文字更清晰 */}
       </div>
 
       {/* 回形针图片 - 始终显示 */}
       <div className="absolute z-[2] right-48 top-34" style={{ transform: "rotate(6deg)" }}>
-        <img src="/images/templates/PaperClip.png" alt="回形针" className="w-[45px] h-auto" />
+        <img src={getAssetPath("/images/templates/PaperClip.png")} alt="回形针" className="w-[45px] h-auto" />
       </div>
 
       {/* 显示上传的封面图 */}
