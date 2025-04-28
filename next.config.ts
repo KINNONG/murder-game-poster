@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // GitHub Pages不支持Next.js的图像优化
   },
+  // 确保应用能作为静态站点工作
+  assetPrefix: isProduction ? `/${repo}/` : "",
+  trailingSlash: true,
 };
 
 export default nextConfig;
