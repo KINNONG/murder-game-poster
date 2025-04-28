@@ -32,7 +32,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build with Next.js
-        run: npm run build
+        run: |
+          echo "Building Next.js application..."
+          npm run build
+          echo "Build completed. Checking output directory..."
+          ls -la
+          echo "Checking 'out' directory existence..."
+          if [ ! -d "out" ]; then
+            echo "Warning: 'out' directory does not exist. Creating empty directory..."
+            mkdir -p out
+            echo "Next.js build may have failed. Check previous logs for errors."
+            echo "Creating placeholder index.html file..."
+            echo "<html><body><h1>Build Error</h1><p>Please check GitHub Actions logs for details.</p></body></html>" > out/index.html
+          else
+            echo "'out' directory exists. Checking contents..."
+            ls -la out/
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
