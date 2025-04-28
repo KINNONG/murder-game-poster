@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
   },
   // 确保应用能作为静态站点工作
   assetPrefix: isProduction ? `/${repo}/` : "",
+  distDir: "out", // 指定输出目录为out
   trailingSlash: true,
 };
 
