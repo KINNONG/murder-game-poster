@@ -48,21 +48,28 @@ export default function PosterEditor() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8 items-start">
-      <div className="w-full lg:w-5/12 bg-white p-6 rounded-lg shadow-sm">
+    <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 items-start">
+      <div className="w-full lg:w-5/12 bg-white p-4 sm:p-6 rounded-lg shadow-sm">
         <PosterForm posterData={posterData} onUpdatePoster={handleUpdatePoster} />
       </div>
 
-      <div className="w-full lg:w-7/12 sticky top-8">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold text-gray-800">预览</h2>
-          <Button onClick={handleExportImage} disabled={isExporting}>
+      <div className="w-full lg:w-7/12 lg:sticky lg:top-8">
+        <div className="flex justify-between items-center mb-3 sm:mb-4 mx-4">
+          <h2 className="text-lg sm:text-xl font-semibold text-gray-800">预览</h2>
+          <Button
+            onClick={handleExportImage}
+            disabled={isExporting}
+            size="sm"
+            className="sm:text-sm md:text-base sm:px-4 md:px-6"
+          >
             {isExporting ? "导出中..." : "导出海报"}
           </Button>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow-sm">
-          <PosterPreview posterData={posterData} />
+        <div className="bg-white rounded-lg ">
+          <div className="max-w-[400px] sm:max-w-[500px] md:max-w-none mx-auto">
+            <PosterPreview posterData={posterData} />
+          </div>
         </div>
       </div>
     </div>

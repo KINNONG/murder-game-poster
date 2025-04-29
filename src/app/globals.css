@@ -7,6 +7,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Long+Cang&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap");
 
+/* 联盟起艺卢帅正锐黑体字体导入 */
+@font-face {
+  font-family: "LianMengQiYi";
+  src: url("/fonts/LianMengQiYiLuShuaiZhengRui.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

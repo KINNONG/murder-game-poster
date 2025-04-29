@@ -76,24 +76,24 @@ export default function PosterForm({ posterData, onUpdatePoster }: PosterFormPro
                   defaultValue={field.value}
                   className="flex space-x-2"
                 >
-                  <FormItem className="flex items-center space-x-1 space-y-0">
+                  {/* <FormItem className="flex items-center space-x-1 space-y-0">
                     <FormControl>
                       <RadioGroupItem value="vintage" />
                     </FormControl>
                     <FormLabel className="font-normal cursor-pointer">复古风</FormLabel>
-                  </FormItem>
+                  </FormItem> */}
                   <FormItem className="flex items-center space-x-1 space-y-0">
                     <FormControl>
                       <RadioGroupItem value="detective" />
                     </FormControl>
                     <FormLabel className="font-normal cursor-pointer">侦探风</FormLabel>
                   </FormItem>
-                  <FormItem className="flex items-center space-x-1 space-y-0">
+                  {/* <FormItem className="flex items-center space-x-1 space-y-0">
                     <FormControl>
                       <RadioGroupItem value="modern" />
                     </FormControl>
                     <FormLabel className="font-normal cursor-pointer">现代风</FormLabel>
-                  </FormItem>
+                  </FormItem> */}
                 </RadioGroup>
               </FormControl>
               <FormMessage />
