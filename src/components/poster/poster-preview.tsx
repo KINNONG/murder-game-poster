@@ -1,6 +1,4 @@
 "use client";
-
-import { getAssetPath } from "@/lib/utils";
 import { type PosterData } from "@/types/poster";
 import { useEffect, useRef, useState } from "react";
 
@@ -70,16 +68,12 @@ function DetectivePoster({ posterData }: PosterPreviewProps) {
         >
           {/* 背景图片 */}
           <div className="absolute inset-0 w-full h-full">
-            <img
-              src={getAssetPath("/images/templates/example.jpg")}
-              alt="背景模板"
-              className="w-full h-full object-cover"
-            />
+            <img src={"/images/templates/example.jpg"} alt="背景模板" className="w-full h-full object-cover" />
           </div>
 
           {/* 回形针图片 */}
           <div className="absolute z-[2]" style={{ right: "10.5rem", top: "7.5rem", transform: "rotate(6deg)" }}>
-            <img src={getAssetPath("/images/templates/PaperClip.png")} alt="回形针" className="w-[45px] h-auto" />
+            <img src={"/images/templates/PaperClip.png"} alt="回形针" className="w-[45px] h-auto" />
           </div>
 
           {/* 封面图 */}
