@@ -88,10 +88,18 @@ function DetectivePoster({ posterData }: PosterPreviewProps) {
             {/* 标题区 */}
             <div className="text-start mb-4 absolute" style={{ top: "9rem", left: "5rem" }}>
               <div
-                className="inline-block px-6 py-1 mb-3 bg-[#7a1f1f] text-[#fffbd7] font-bold transform skew-x-[-15deg] shadow-[4px_6px_0px_rgba(169,87,66,0.5)]"
-                style={{ fontFamily: "'LianMengQiYi', 'Source Han Sans SC', 'Noto Sans SC', sans-serif" }}
+                className="inline-block px-5  mb-3 bg-[#7a1f1f] text-[#fffbd7] font-bold transform skew-x-[-15deg] smooth-font shadow-[4px_6px_0px_rgba(169,87,66,0.5)]"
+                style={{
+                  fontFamily:
+                    "'SourceHanSansCN-Heavy', 'Source Han Sans CN Heavy', 'Source Han Sans SC', 'Noto Sans SC', sans-serif",
+                }}
               >
-                <h1 className="text-[22px] sm:text-[24px] font-bold transform skew-x-[15deg]">{title || "剧本名称"}</h1>
+                <h1
+                  style={{ marginBlockStart: "-0.1rem", marginBlockEnd: "-0.1rem" }}
+                  className="text-[22px] sm:text-[24px] font-bold transform skew-x-[15deg]"
+                >
+                  {title || "剧本名称"}
+                </h1>
               </div>
               <div
                 className="text-[20px] w-[280px] line-clamp-1 text-start ml-2 mt-1 font-medium text-[#6b2026]"

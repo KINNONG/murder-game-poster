@@ -16,6 +16,22 @@
   font-display: swap;
 }
 
+/* 思源黑体 CN Heavy 字体导入 */
+@font-face {
+  font-family: "SourceHanSansCN-Heavy";
+  src: url("/fonts/SourceHanSansCN/SourceHanSansCN-Heavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 字体平滑渲染设置 */
+.smooth-font {
+  -webkit-font-smoothing: antialiased; /* Chrome/Safari */
+  -moz-osx-font-smoothing: grayscale; /* Firefox */
+  text-rendering: optimizeLegibility; /* 优化字体清晰度 */
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
