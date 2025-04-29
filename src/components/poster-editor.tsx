@@ -5,12 +5,32 @@ import PosterPreview from "@/components/poster/poster-preview";
 import { Button } from "@/components/ui/button";
 import { type PosterData, defaultPosterData } from "@/types/poster";
 import * as htmlToImage from "html-to-image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 export default function PosterEditor() {
   const [posterData, setPosterData] = useState<PosterData>(defaultPosterData);
   const [isExporting, setIsExporting] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // 检测是否为移动设备
+  useEffect(() => {
+    const checkMobile = () => {
+      const userAgent = navigator.userAgent || navigator.vendor || "";
+      const mobileRegex = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile|Mobile/i;
+      const isMobileByAgent = mobileRegex.test(userAgent);
+      const isMobileByWidth = window.innerWidth < 768;
+
+      setIsMobile(isMobileByAgent || isMobileByWidth);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
 
   const handleUpdatePoster = (newData: PosterData) => {
     setPosterData(newData);
@@ -26,10 +46,13 @@ export default function PosterEditor() {
     try {
       setIsExporting(true);
 
+      // 根据设备类型设置不同的pixelRatio
+      const pixelRatio = isMobile ? 4 : 2;
+
       // 生成图片
       const dataUrl = await htmlToImage.toPng(previewElement, {
-        quality: 0.95,
-        pixelRatio: 2,
+        quality: 1,
+        pixelRatio,
       });
 
       // 创建下载链接
